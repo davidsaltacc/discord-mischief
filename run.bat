@@ -1,0 +1,1 @@
+deno --allow-env --allow-read --allow-net main.js 
