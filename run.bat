@@ -1,1 +1,2 @@
-deno --allow-env --allow-read --allow-net main.js 
+@echo off
+node main.js
