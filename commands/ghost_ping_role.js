@@ -1,5 +1,5 @@
 
-import { Command, findRole } from "../library.js";
+import { Command, findRole, sendSilentMessage } from "../library.js";
 
 export const GhostPingRoleCommand = new Command("gpr", async (client, message, args) => {
 
