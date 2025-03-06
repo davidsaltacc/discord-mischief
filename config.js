@@ -42,6 +42,10 @@ ERROR_TIMEOUT=1000
 
 # The command prefix. For example: m!help, m!config. Default: m!
 PREFIX=m!
+
+# Makes all messages silent so no push notifications appear. Fixes multiple issues.
+ENABLE_NOTIFIX=true
+
 `;
 
 var config = {};
@@ -75,13 +79,12 @@ if (!fs.existsSync(CONFIG_PATH)) {
 
 }
 
-if (!config["CONFIRMED"]) {
+if (!Boolean.valueOf(config["CONFIRMED"])) {
     openConfigFile();
     throw new Error("please confirm you read the readme in the config file.");
 }
 
-export const TOKEN = config["TOKEN"];
-export const ERROR_TIMEOUT = config["ERROR_TIMEOUT"];
-export const PREFIX = config["PREFIX"];
-
-
+export const TOKEN = config["TOKEN"] ?? null;
+export const ERROR_TIMEOUT = parseInt(config["ERROR_TIMEOUT"] ?? 1000);
+export const PREFIX = config["PREFIX"] ?? "m!";
+export const ENABLE_NOTIFIX = Boolean.valueOf(config["ENABLE_NOTIFIX"] ?? true);

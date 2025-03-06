@@ -1,6 +1,5 @@
 
-import { Command, findRole } from "../library.js";
-import { INVIS_GLITCH, sendSilentMessage } from "../library.js";
+import { Command, findRole, INVIS_GLITCH, sendMessage } from "../library.js";
 
 export const RolePingCommand = new Command("rp", async (client, message, args) => {
 
@@ -20,6 +19,6 @@ export const RolePingCommand = new Command("rp", async (client, message, args) =
             ping += `<@${member.id}> `;
         }
     });
-    await sendSilentMessage(message.channel, ping);
+    await sendMessage(message.channel, ping);
 
 });

@@ -1,6 +1,6 @@
 
 import { ERROR_TIMEOUT } from "../config.js";
-import { Command, INVIS_GLITCH, sendSilentMessage } from "../library.js";
+import { Command, INVIS_GLITCH, sendMessage } from "../library.js";
 
 export const HiddenPingRoleCommand = new Command("hrp", async (client, message, args) => {
 
@@ -10,6 +10,6 @@ export const HiddenPingRoleCommand = new Command("hrp", async (client, message, 
         return;
     }
 
-    await sendSilentMessage(message.channel, `${args.slice(1).join(" ")} ${INVIS_GLITCH} <@&${args[0]}>`);
+    await sendMessage(message.channel, `${args.slice(1).join(" ")} ${INVIS_GLITCH} <@&${args[0]}>`);
 
 });

@@ -1,5 +1,5 @@
 
-import { Command, findUser, sendSilentMessage } from "../library.js";
+import { Command, findUser, sendMessage } from "../library.js";
 
 export const GhostPingUserCommand = new Command("gpu", async (client, message, args) => {
 
@@ -11,6 +11,6 @@ export const GhostPingUserCommand = new Command("gpu", async (client, message, a
         return;
     }
 
-    await (await sendSilentMessage(message.channel, `<@${user_id}>`)).delete();
+    await (await sendMessage(message.channel, `<@${user_id}>`)).delete();
 
 });

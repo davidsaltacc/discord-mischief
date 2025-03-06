@@ -1,5 +1,5 @@
 
-import { Command, findRole, sendSilentMessage } from "../library.js";
+import { Command, findRole, sendMessage } from "../library.js";
 
 export const GhostPingRoleCommand = new Command("gpr", async (client, message, args) => {
 
@@ -11,6 +11,6 @@ export const GhostPingRoleCommand = new Command("gpr", async (client, message, a
         return;
     }
 
-    await (await sendSilentMessage(message.channel, `<@&${role_id}>`)).delete();
+    await (await sendMessage(message.channel, `<@&${role_id}>`)).delete();
 
 });
